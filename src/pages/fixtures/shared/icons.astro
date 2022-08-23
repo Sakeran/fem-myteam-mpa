@@ -1,0 +1,30 @@
+---
+import Chart from "../../../components/Shared/Icons/Chart.astro";
+import Cog from "../../../components/Shared/Icons/Cog.astro";
+import Person from "../../../components/Shared/Icons/Person.astro";
+import Quotes from "../../../components/Shared/Icons/Quotes.astro";
+import Layout from "../../../layouts/Layout.astro";
+---
+
+<Layout noHeader={true}>
+    <div class="p-6 space-y-4">
+        <h1>Icons</h1>
+        <h2>Person</h2>
+        <Person />
+
+        <h2>Chart</h2>
+        <Chart />
+
+        <h2>Cog</h2>
+        <Cog />
+
+        <h2>Quotes</h2>
+        <Quotes />
+    </div>
+</Layout>
+
+<style>
+    h2 + :global(*) {
+        max-width: 72px;
+    }
+</style>

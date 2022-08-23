@@ -8,14 +8,14 @@ const { title, text } = Astro.props as Props;
 ---
 
 <div
-    class="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6"
+    class="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6"
 >
     <div class="w-18 basis-18 shrink-0">
         <slot name="icon" />
     </div>
 
-    <div class="space-y-2 md:space-y-4 text-center md:text-start">
+    <div class="space-y-2 sm:space-y-4 text-center sm:text-start">
         <h3 class="font-bold text-18p leading-28/18 text-red-coral">{title}</h3>
-        <p class="font-semibold text-15p leading-25/15">{text}</p>
+        <p class="max-w-[40ch] sm:max-w-none mx-auto font-semibold text-15p leading-25/15">{text}</p>
     </div>
 </div>

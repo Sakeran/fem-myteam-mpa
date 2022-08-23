@@ -1,0 +1,63 @@
+---
+import Chart from "../../Shared/Icons/Chart.astro";
+import Cog from "../../Shared/Icons/Cog.astro";
+import Person from "../../Shared/Icons/Person.astro";
+import BGHome3 from "./BGHome3.astro";
+import FeatureCard from "./FeatureCard.astro";
+---
+
+<section class="relative overflow-hidden bg-green-sacremento py-16 md:py-25 lg:py-[8.75rem]">
+    <div class="absolute top-0 xl:top-auto xl:bottom-0 right-0 translate-x-1/2 w-[12.5rem] " aria-hidden="true"><BGHome3 /></div>
+
+    <div
+        class="relative z-10 px-6 box-content mx-auto max-w-md-container lg:max-w-lg-container lg:flex"
+    >
+        <h2
+            class="font-bold text-8 lg:text-12 leading-none max-w-[15rem] sm:max-w-[25ch] lg:max-w-[15ch]"
+        >
+            Build & manage distributed teams like no one else.
+        </h2>
+        <div
+            class="mt-14 md:mt-16 space-y-12 md:space-y-8 lg:basis-1/2 lg:ml-auto lg:mt-14"
+        >
+            <FeatureCard
+                title="Experienced Individuals"
+                text="Our network is made up of highly experienced professionals who are passionate about what they do."
+            >
+                <Person slot="icon" />
+            </FeatureCard>
+            <FeatureCard
+                title="Easy to Implement"
+                text="Our processes have been refined over years of implementation meaning our teams always deliver."
+            >
+                <Cog slot="icon" />
+            </FeatureCard>
+            <FeatureCard
+                title="Enhanced Productivity"
+                text="Our customized platform with in-built alps you manage your distributed teamshat they do."
+            >
+                <Chart slot="icon" />
+            </FeatureCard>
+        </div>
+    </div>
+</section>
+
+<style lang="postcss">
+    h2 {
+        @apply flex flex-col gap-8;
+    }
+
+    h2::before {
+        content: "";
+        width: 3.125rem;
+        height: 0.25rem;
+
+        background-color: theme("colors.red.coral");
+    }
+
+    @media screen("lg") {
+        h2 {
+            @apply gap-14;
+        }
+    }
+</style>

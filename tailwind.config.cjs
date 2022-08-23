@@ -48,6 +48,7 @@ module.exports = {
       "15p": "0.9375rem",
       "18p": "1.125rem",
       8: "2rem",
+      10: "2.5rem",
       12: "3rem",
       16: "4rem",
       25: "6.25rem",
@@ -58,6 +59,7 @@ module.exports = {
     },
 
     maxWidth: {
+      "none": "none",
       "lg-container": "69.375rem",
       "md-container": "35.8125rem",
     },

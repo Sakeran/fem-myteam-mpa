@@ -1,0 +1,41 @@
+---
+import Quotes from "../../Shared/Icons/Quotes.astro";
+
+export interface Props {
+    name: string;
+    jobTitle: string;
+    quote: string;
+    avatarURL: string;
+}
+const { name, jobTitle, quote, avatarURL } = Astro.props as Props;
+---
+
+<figure class="relative">
+    <div
+        class="absolute top-0 left-1/2 w-16 -translate-x-1/2"
+        aria-hidden="true"
+    >
+        <Quotes />
+    </div>
+
+    <blockquote
+        class="relative pt-9 text-15p leading-25/15 font-semibold text-center z-10"
+    >
+        {quote}
+    </blockquote>
+
+    <figcaption class="flex flex-col items-center mt-4">
+        <span
+            class="font-bold text-18 leading-28/18 text-blue-rapture text-center"
+            >{name}
+        </span>
+        <span class="mt-[0.12rem] font-medium italic text-13p leading-18/13 text-center"
+            >{jobTitle}
+        </span>
+        <img
+            class="w-[3.875rem] mt-4 aspect-square border-blue-rapture border-2 rounded-[50%]"
+            src={avatarURL}
+            alt=""
+        />
+    </figcaption>
+</figure>

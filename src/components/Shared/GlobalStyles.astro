@@ -1,0 +1,13 @@
+<style is:global lang="postcss">
+    *:focus-visible {
+        @apply outline-white outline-dashed outline-offset-4 outline-1;
+    }
+
+    .button {
+        @apply min-h-button rounded-full border-current border-2 flex justify-center items-center hocus:bg-white hocus:text-green-midnight hocus:border-transparent motion-safe:transition-colors motion-safe:ease-in-out;
+    }
+
+    a {
+        @apply hocus:text-red-coral motion-safe:transition-colors motion-safe:ease-in-out;
+    }
+</style>

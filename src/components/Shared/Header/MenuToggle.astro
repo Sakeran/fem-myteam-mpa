@@ -1,0 +1,73 @@
+<svg
+    width="20"
+    height="17"
+    viewBox="0 0 20 17"
+    fill="none"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <g id="toggle-hb">
+        <rect width="20" height="3" fill="currentColor"></rect>
+        <rect y="7" width="20" height="3" fill="currentColor"></rect>
+        <rect y="14" width="20" height="3" fill="currentColor"></rect>
+    </g>
+
+    <g id="toggle-cross">
+        <rect
+            x="4.12134"
+            y="1"
+            width="20"
+            height="3"
+            transform="rotate(45 4.12134 1)"
+            fill="currentColor"></rect>
+        <rect
+            x="2"
+            y="15.1421"
+            width="20"
+            height="3"
+            transform="rotate(-45 2 15.1421)"
+            fill="currentColor"></rect>
+    </g>
+</svg>
+
+<style lang="postcss">
+    /* Obs - This icon is placed inside of a button element.
+       Toggle between hamburger/cross based on that button's aria-expanded state. */
+    svg {
+        --toggle-duration: 0.2s;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        #toggle-hb,
+        #toggle-cross {
+            transition-property: all;
+        }
+    }
+
+    #toggle-hb {
+        transition-duration: var(--toggle-duration);
+        transform-origin: center;
+        transition-delay: var(--toggle-duration);
+        transition-timing-function: ease-out;
+    }
+
+    :global([aria-expanded="true"]) > svg #toggle-hb {
+        transform: scale(0) rotate(-90deg);
+        opacity: 0;
+        transition-timing-function: ease-in;
+        transition-delay: 0s;
+    }
+
+    #toggle-cross {
+        transition-duration: var(--toggle-duration);
+        transform-origin: center;
+        transform: scale(0) rotate(0deg);
+        transition-timing-function: ease-in;
+    }
+
+    :global([aria-expanded="true"]) > svg #toggle-cross {
+        transform: scale(1) rotate(-90deg);
+        transition-timing-function: ease-out;
+        transition-delay: var(--toggle-duration);
+    }
+</style>

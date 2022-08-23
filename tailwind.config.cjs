@@ -1,3 +1,5 @@
+const plugin = require("tailwindcss/plugin");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -51,17 +53,26 @@ module.exports = {
       25: "6.25rem",
     },
 
-	maxWidth: {
-		"lg-container": "69.375rem",
-		"md-container": "35.8125rem",
-	},
+    minHeight: {
+      button: "3rem",
+    },
+
+    maxWidth: {
+      "lg-container": "69.375rem",
+      "md-container": "35.8125rem",
+    },
 
     extend: {
       spacing: {
+        18: "4.5rem",
         22: "5.5rem",
         25: "6.25rem",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addVariant }) => {
+      addVariant("hocus", ["&:hover", "&:focus-visible"]);
+    }),
+  ],
 };

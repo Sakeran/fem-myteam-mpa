@@ -9,9 +9,11 @@ import MobileNavBG from "./MobileNavBG.astro";
     class="max-w-lg-container px-6 md:px-10 box-content mx-auto mt-12 md:mt-16 lg:mt-18 md:flex md:items-center md:gap-12 lg:gap-20"
     data-nav-visible="false"
 >
-    <div class="w-32 lg:w-40 shrink-0"><a href="/">
-        <Logo />
-    </a></div>
+    <div class="w-32 lg:w-40 shrink-0">
+        <a href="/">
+            <Logo />
+        </a>
+    </div>
 
     <button
         id="menu-toggle"
@@ -83,15 +85,19 @@ import MobileNavBG from "./MobileNavBG.astro";
         const header: HTMLDivElement = document.querySelector(
             "#page-header"
         ) as HTMLDivElement;
-        if (!header || !(header instanceof HTMLElement))
-            throw new Error("Missing header element");
+        if (!header || !(header instanceof HTMLElement)) {
+            console.warn("Missing header element");
+            return;
+        }
 
         const nav = header.querySelector("nav") as HTMLDivElement;
         const toggle = header.querySelector("button") as HTMLButtonElement;
         const scrim = header.querySelector(".scrim") as HTMLDivElement;
         const srText = toggle.querySelector("span") as HTMLSpanElement;
-        if (!nav || !toggle || !srText || !scrim)
-            throw new Error("Missing navigation elements");
+        if (!nav || !toggle || !srText || !scrim) {
+            console.warn("Missing navigation elements");
+            return;
+        }
 
         function toggleNavMenu() {
             if (header.dataset.navVisible == "true") {

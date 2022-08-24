@@ -1,0 +1,48 @@
+---
+import BGHome4 from "./BGHome4.astro";
+import BGHome5 from "./BGHome5.astro";
+import TestimonialCard from "./TestimonialCard.astro";
+---
+
+<section class="relative overflow-hidden py-[8.75rem] sm:py-25 lg:[8.75rem]">
+    <div class="absolute top-0 left-0 w-[9.25rem]" aria-hidden="true">
+        <BGHome4 />
+    </div>
+    <div
+        class="max-w-md-container lg:max-w-lg-container mx-auto box-content px-6"
+    >
+        <h2
+            class="font-bold text-8 lg:text-12 leading-none text-center max-w-[25ch] lg:max-w-[32ch] mx-auto"
+        >
+            Delivering real results for top companies. Some of our <span
+                class="text-blue-rapture"
+                >success stories.
+            </span>
+        </h2>
+        <div
+            class="mt-12 lg:mt-14 flex flex-col lg:flex-row gap-12 lg:gap-[1.875rem]"
+        >
+            <TestimonialCard
+                name="Kady Baker"
+                jobTitle="Product Manager at Bookmark"
+                quote="“The team perfectly fit the specialized skill set required. They focused on the most essential features helping us launch the platform eight months faster than planned.”"
+                avatarURL="/images/avatar-kady.jpg"
+            />
+            <TestimonialCard
+                name="Aiysha Reese"
+                jobTitle="Founder of Manage"
+                quote="“We needed to automate our entire onboarding process. The team came in and built out the whole journey. Since going live, user retention has gone through the roof!”"
+                avatarURL="/images/avatar-aiysha.jpg"
+            />
+            <TestimonialCard
+                name="Arthur Clarke"
+                jobTitle="Co-founder of MyPhysio"
+                quote="“Amazing. Our team helped us build an app that delivered a new experience for hiring a physio. The launch was an instant success with 100k downloads in the first month.”"
+                avatarURL="/images/avatar-arthur.jpg"
+            />
+        </div>
+    </div>
+    <div class="absolute bottom-0 right-0 w-[12.5rem]" aria-hidden="true">
+        <BGHome5 />
+    </div>
+</section>

@@ -1,4 +1,5 @@
 ---
+import Footer from "../components/Shared/Footer/Footer.astro";
 import GlobalStyles from "../components/Shared/GlobalStyles.astro";
 import Header from "../components/Shared/Header/Header.astro";
 
@@ -33,18 +34,28 @@ const { title, noHeader } = Astro.props as Props;
         </title>
     </head>
 
-    <body class="bg-green-midnight text-white text-15p font-semibold">
+    <body class="bg-green-midnight text-white text-15p font-semibold min-h-screen flex flex-col">
         {!noHeader && (
         <div
             class="bg-green-dark p-6 text-center text-18p absolute top-0 left-0 right-0 z-50 -translate-y-full focus-within:translate-y-0 motion-safe:transition-transform motion-safe:ease-in-out"
         >
             <a href="#main-content">Skip to Main Content</a>
         </div>
-        <Header />
+        <div>
+            <Header />
+        </div>
         )}
         <main id="main-content">
             <slot />
         </main>
+        {!noHeader && <Footer />}
         <GlobalStyles />
     </body>
 </html>
+
+<style lang="postcss">
+    
+    :global(footer) {
+        margin-top: auto;
+    }
+</style>

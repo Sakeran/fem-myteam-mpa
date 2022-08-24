@@ -56,6 +56,7 @@ module.exports = {
 
     minHeight: {
       button: "3rem",
+      screen: "100vh"
     },
 
     maxWidth: {

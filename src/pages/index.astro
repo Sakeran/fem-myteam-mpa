@@ -1,8 +1,17 @@
 ---
+import Features from "../components/Home/Features/Features.astro";
+import Hero from "../components/Home/Hero/Hero.astro";
+import Testimonials from "../components/Home/Testimonials/Testimonials.astro";
+import CTASection from "../components/Shared/CTASection/CTASection.astro";
 import Layout from "../layouts/Layout.astro"
 
 ---
 
 <Layout>
-	<h1>Astro</h1>
+	<div class="mt-20 md:mt-28 lg:mt-32">
+		<Hero />
+	</div>
+	<Features />
+	<Testimonials />
+	<CTASection />
 </Layout>

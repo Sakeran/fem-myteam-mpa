@@ -1,0 +1,109 @@
+---
+import Logo from "../Logo/Logo.astro";
+import LinkedIn from "./LinkedIn.astro";
+import Pintrest from "./Pintrest.astro";
+import Twitter from "./Twitter.astro";
+---
+
+<footer class="py-16 md:py-14 lg:py-12 bg-green-dark">
+    <div
+        class="footer-content max-w-lg-container box-content mx-auto px-6 md:px-10"
+    >
+        <div class="logo w-24 lg:w-40"><Logo /></div>
+        <nav
+            class="navigation text-15p lg:text-18p leading-25/15 lg:leading-28/18"
+        >
+            <ul class="flex gap-6 lg:gap-10">
+                <li><a href="/">home</a></li>
+                <li><a href="/about">about</a></li>
+            </ul>
+        </nav>
+        <address
+            class="address not-italic font-semibold text-15p leading-25/15 text-white/60 text-center md:text-end"
+        >
+            987 Hillcrest Lane<br />
+            Irvine, CA<br />
+            California 92714<br />
+            Call Us : <a class="hocus:text-red-coral/100" href="tel:+9495557432">949-833-7432</a>
+        </address>
+        <div class="sm-links flex gap-4 lg:ml-auto">
+            <a href="#"
+                ><LinkedIn /><span class="sr-only">Visit us on Facebook</span>
+            </a>
+            <a href="#"
+                ><Pintrest /><span class="sr-only">Visit us on Pintrest</span>
+            </a>
+            <a href="#"
+                ><Twitter /><span class="sr-only">Visit us on Twitter</span>
+            </a>
+        </div>
+        <p
+            class="copyright font-semibold text-15p leading-25/15 text-center md:text-end opacity-60"
+        >
+            Copyright 2020. All Rights Reserved
+        </p>
+    </div>
+</footer>
+
+<style lang="postcss">
+    .logo {
+        grid-area: logo;
+
+        @apply md:justify-self-start;
+    }
+
+    .navigation {
+        grid-area: navigation;
+
+        @apply mt-6 md:mt-13 lg:mt-6 md:justify-self-start;
+    }
+
+    .address {
+        grid-area: address;
+
+        @apply mt-6 md:mt-0 md:justify-self-end;
+    }
+
+    .sm-links {
+        grid-area: sm-links;
+    
+        @apply mt-10 md:mt-8 lg:mt-0 md:justify-self-start;
+    }
+
+    .copyright {
+        grid-area: copyright;
+
+        @apply mt-4 md:mt-8 lg:mt-9 md:justify-self-end md:place-self-center;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "logo"
+            "navigation"
+            "address"
+            "sm-links"
+            "copyright";
+        justify-items: center;
+    }
+
+    @media screen(md) {
+        .footer-content {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "logo address"
+                "navigation address"
+                "sm-links copyright";
+        }
+    }
+
+    @media screen(lg) {
+        .footer-content {
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-areas:
+                "logo logo . address address address . . . . sm-links sm-links"
+                "navigation navigation . address address address . . . copyright copyright copyright";
+        }
+    }
+</style>

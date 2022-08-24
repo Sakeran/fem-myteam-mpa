@@ -4,10 +4,40 @@
     }
 
     .button {
-        @apply min-h-button rounded-full border-current border-2 flex justify-center items-center hocus:bg-white hocus:text-green-midnight hocus:border-transparent motion-safe:transition-colors motion-safe:ease-in-out;
+        @apply min-h-button inline-flex items-center rounded-full border-2 motion-safe:transition-colors motion-safe:ease-in-out;
+        color: var(--btn-text, black);
+        border-color: var(--btn-border, black);
+        background-color: var(--btn-bg, transparent);
     }
 
-    a {
+    .button:hover, .button:focus-visible {
+        outline-color: var(--btn-border-hover, black);
+        color: var(--btn-text-hover, white);
+        border-color: var(--btn-border-hover, black);
+        background-color: var(--btn-bg-hover, black);
+    }
+
+    .button.primary {
+        --btn-text: white;
+        --btn-border: white;
+        --btn-bg: transparent;
+
+        --btn-text-hover: theme("colors.green.dark");
+        --btn-border-hover: white;
+        --btn-bg-hover: white;
+    }
+
+    .button.primary-dark {
+        --btn-text: theme("colors.green.sacremento");
+        --btn-border: theme("colors.green.sacremento");
+        --btn-bg: transparent;
+
+        --btn-text-hover: white;
+        --btn-border-hover: theme("colors.green.sacremento");
+        --btn-bg-hover: theme("colors.green.sacremento");
+    }
+
+    a:not(.button) {
         @apply hocus:text-red-coral motion-safe:transition-colors motion-safe:ease-in-out;
     }
 </style>

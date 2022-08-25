@@ -1,4 +1,6 @@
 <script lang="ts">
+  import CardBackContent from "./CardBackContent.svelte";
+
   interface TeammateBioData {
     avatarURL: string;
     name: string;
@@ -22,5 +24,13 @@
   >
     {data.name}
   </h3>
-  <p class="text-15p font-medium italic text-center leading-25/15">{data.jobTitle}</p>
+  <p class="text-15p font-medium italic text-center leading-25/15">
+    {data.jobTitle}
+  </p>
+
+  <noscript>
+    <div class="mt-8 pt-8 border-t-2 border-blue-rapture">
+      <CardBackContent {data} />
+    </div>
+  </noscript>
 </div>

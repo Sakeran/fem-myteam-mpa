@@ -22,5 +22,5 @@
   >
     {data.name}
   </h3>
-  <p class="text-15p italic text-center leading-25/15">{data.jobTitle}</p>
+  <p class="text-15p font-medium italic text-center leading-25/15">{data.jobTitle}</p>
 </div>

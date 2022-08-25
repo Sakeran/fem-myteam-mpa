@@ -1,0 +1,19 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import TeammateBio from "../../../components/About/Clients/TeammateBio/TeammateBio.svelte";
+
+const testData = {
+    avatarURL: "/images/avatar-nikita.jpg",
+    name: "Nikita Marks",
+    jobTitle: "Founder & CEO",
+    quote: "It always amazes me how much talent there is in every corner of the globe.",
+    twitterURL: "#",
+    linkedinURL: "#"
+};
+---
+
+<Layout noHeader={true}>
+    <div class="w-96">
+       <TeammateBio client:load data={testData} /> 
+    </div>
+</Layout>

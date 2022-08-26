@@ -4,6 +4,7 @@
   import TeammateBioBack from "./CardBack.svelte";
   import TeammateBioFront from "./CardFront.svelte";
   import checkReducedMotion from "../../../../helpers/checkReducedMotion";
+  import { fade } from "svelte/transition";
 
   interface TeammateBioData {
     avatarURL: string;
@@ -24,9 +25,19 @@
 
   // Transition function for back face
   function clipExpand(
-    _node: HTMLDivElement,
+    node: HTMLDivElement,
     params: any
   ): SvelteTransitionReturnType {
+    // Note - Animated clip-path not currently supported on Safari. Fall back to a fade animation.
+    if (
+      !window ||
+      (window.navigator.userAgent.includes("Safari") &&
+        !window.navigator.userAgent.includes("Chrome"))
+    ) {
+      return fade(node, params);
+    }
+
+    // Animated clip paths supported elsewhere.
     return {
       duration: checkReducedMotion(400, 0),
       easing: cubicInOut,

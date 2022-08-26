@@ -1,0 +1,34 @@
+---
+import TeammateBio from "../Clients/TeammateBio/TeammateBio.svelte";
+import directors from "./directorData.json";
+import BGAbout2 from "./BGAbout2.astro";
+import BGAbout3 from "./BGAbout3.astro";
+---
+
+<section class="relative overflow-hidden bg-green-jungle pt-20 pb-22 md:py-25 lg:py-35">
+    <div class="w-[12.5rem] absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 md:translate-y-0 lg:translate-x-0">
+        <BGAbout2></BGAbout2>
+    </div>
+    <div
+        class="max-w-md-container mx-auto box-content px-6 md:px-10 lg:max-w-lg-container"
+    >
+        <h2 class="font-bold leading-none text-8 lg:text-12 text-center">
+            Meet the directors
+        </h2>
+        <div
+            class="mt-10 md:mt-12 lg:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 md:gap-y-12 md:gap-x-3 lg:gap-x-[1.875rem]"
+        >
+            {
+                directors.map((d) => (
+                    <div class="w-full max-w-[22rem] mx-auto">
+                        <TeammateBio client:load data={d} />
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+    <div class="w-[9.1875rem] absolute bottom-0 right-0">
+        <BGAbout3></BGAbout3>
+    </div>
+</section>
+

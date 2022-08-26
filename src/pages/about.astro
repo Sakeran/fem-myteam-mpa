@@ -1,7 +1,14 @@
 ---
+import Clients from "../components/About/Clients/Clients.astro";
+import Directors from "../components/About/Directors/Directors.astro";
+import Intro from "../components/About/Intro/Intro.astro";
+import CTASection from "../components/Shared/CTASection/CTASection.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title={"About Us"} >
-    about page
+    <Intro />
+    <Directors />
+    <Clients />
+    <CTASection />
 </Layout>

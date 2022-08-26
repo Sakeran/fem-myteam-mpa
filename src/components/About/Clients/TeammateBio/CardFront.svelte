@@ -15,7 +15,7 @@
 
 <div class="front-face pt-8 pb-14">
   <img
-    class="w-[6rem] aspect-square rounded-[50%] border-2 border-blue-rapture block mx-auto"
+    class="w-24 aspect-square rounded-[50%] border-2 border-blue-rapture block mx-auto"
     src={data.avatarURL}
     alt=""
   />

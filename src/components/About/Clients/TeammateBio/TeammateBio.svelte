@@ -1,7 +1,9 @@
 <script lang="ts">
+  import { cubicInOut } from "svelte/easing";
   import TeammateBioButton from "./ToggleButton.svelte";
   import TeammateBioBack from "./CardBack.svelte";
   import TeammateBioFront from "./CardFront.svelte";
+  import checkReducedMotion from "../../../../helpers/checkReducedMotion";
 
   interface TeammateBioData {
     avatarURL: string;
@@ -19,6 +21,18 @@
   function toggle() {
     expandedInfo = !expandedInfo;
   }
+
+  // Transition function for back face
+  function clipExpand(
+    _node: HTMLDivElement,
+    params: any
+  ): SvelteTransitionReturnType {
+    return {
+      duration: checkReducedMotion(400, 0),
+      easing: cubicInOut,
+      css: (t) => `clip-path: circle(${t * 100}% at 50% 100%)`,
+    };
+  }
 </script>
 
 <div class="teammate-bio">
@@ -29,7 +43,10 @@
     <TeammateBioButton {data} expanded={expandedInfo} on:click={toggle} />
   </div>
   {#if expandedInfo}
-    <div class="row-start-1 row-end-3 col-start-1 col-end-2 bg-green-dark">
+    <div
+      transition:clipExpand
+      class="row-start-1 row-end-3 col-start-1 col-end-2 bg-green-dark"
+    >
       <TeammateBioBack {data} />
     </div>
   {/if}

@@ -29,10 +29,12 @@ const { name, jobTitle, quote, avatarURL } = Astro.props as Props;
             class="font-bold text-18 leading-28/18 text-blue-rapture text-center"
             >{name}
         </span>
-        <span class="mt-[0.12rem] font-medium italic text-13p leading-18/13 text-center"
+        <span
+            class="mt-[0.12rem] font-medium italic text-13p leading-18/13 text-center"
             >{jobTitle}
         </span>
         <img
+            loading="lazy"
             class="w-[3.875rem] mt-4 aspect-square border-blue-rapture border-2 rounded-[50%]"
             src={avatarURL}
             alt=""

@@ -1,8 +1,30 @@
 ---
+import AskUs from "../components/Contact/AskUs/AskUs.astro";
+import BGContact1 from "../components/Contact/Backgrounds/BGContact1.astro";
+import BGContact2 from "../components/Contact/Backgrounds/BGContact2.astro";
+import ContactForm from "../components/Contact/ContactForm/ContactForm.svelte";
 import Layout from "../layouts/Layout.astro";
-
 ---
 
-<Layout title={"Contact Us"} >
-    contact page
+<Layout title={"Contact Us"}>
+    <section
+        class="relative overflow-hidden mt-20 pb-20 md:mt-28 md:pb-28 lg:mt-30 lg:pb-30"
+    >
+        <div
+            class="w-[12.5rem] absolute top-0 left-0 hidden md:block lg:hidden xl:block md:-translate-x-1/2"
+        >
+            <BGContact1 />
+        </div>
+        <div
+            class="relative z-10 max-w-[32.1875rem] lg:max-w-lg-container mx-auto box-content px-6 md:px-10 flex flex-col lg:flex-row gap-14 md:gap-16 lg:gap-[1.875rem]"
+        >
+            <div class="lg:basis-full"><AskUs /></div>
+            <div class="lg:basis-full"><ContactForm client:load /></div>
+        </div>
+        <div
+            class="w-[12.5625rem] absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 md:translate-y-0 lg:translate-y-1/2 xl:translate-y-0"
+        >
+            <BGContact2 />
+        </div>
+    </section>
 </Layout>

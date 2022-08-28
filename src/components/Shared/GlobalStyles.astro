@@ -10,7 +10,8 @@
         background-color: var(--btn-bg, transparent);
     }
 
-    .button:hover, .button:focus-visible {
+    .button:hover,
+    .button:focus-visible {
         outline-color: var(--btn-border-hover, black);
         color: var(--btn-text-hover, white);
         border-color: var(--btn-border-hover, black);
@@ -35,6 +36,16 @@
         --btn-text-hover: white;
         --btn-border-hover: theme("colors.green.sacremento");
         --btn-bg-hover: theme("colors.green.sacremento");
+    }
+
+    .button.submit {
+        --btn-text: theme("colors.green.dark");
+        --btn-border: white;
+        --btn-bg: white;
+
+        --btn-text-hover:  theme("colors.green.dark");
+        --btn-border-hover: theme("colors.blue.rapture");
+        --btn-bg-hover: theme("colors.blue.rapture");
     }
 
     a:not(.button) {

@@ -74,7 +74,7 @@
   <p
     id={errorsId}
     style:visibility={hasErrors ? "visible" : "collapse"}
-    class="pl-[0.875rem] -mb-2 mt-2 text-10p text-red-coral"
+    class="pl-[0.875rem] -mb-2 mt-2 text-10p font-bold italic text-red-coral"
   >
     {errorMessage}
   </p>

@@ -1,0 +1,10 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import ContactForm from "../../../components/Contact/ContactForm/ContactForm.svelte";
+---
+
+<Layout noHeader={true}>
+    <div class="max-w-md-container p-6">
+        <ContactForm  client:load/>
+    </div>
+</Layout>

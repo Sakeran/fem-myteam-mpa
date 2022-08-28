@@ -1,0 +1,33 @@
+---
+import Chart from "../../Shared/Icons/Chart.astro";
+import Cog from "../../Shared/Icons/Cog.astro";
+import Person from "../../Shared/Icons/Person.astro";
+import AskUsCard from "./AskUsCard.astro";
+---
+
+<div>
+    <h1
+        class="font-bold leading-none md:leading-56/64 lg:leading-100/64 text-10 md:text-16 text-center lg:text-start"
+    >
+        Contact
+    </h1>
+
+    <h2
+        id="ask-us-header"
+        class="mt-4 md:mt-6 lg:mt-4 font-bold text-red-coral text-8 leading-48/32 text-center lg:text-left"
+    >
+        Ask us about
+    </h2>
+
+    <ul class="mt-10 md:mt-6 lg:mt-8 flex flex-col gap-6 md:gap-2" aria-labelledby="ask-us-header">
+        <AskUsCard text="The quality of our talent network">
+            <Person slot="icon" />
+        </AskUsCard>
+        <AskUsCard text="Usage & implementation of our software">
+            <Cog slot="icon" />
+        </AskUsCard>
+        <AskUsCard text="How we help drive innovation">
+            <Chart slot="icon" />
+        </AskUsCard>
+    </ul>
+</div>

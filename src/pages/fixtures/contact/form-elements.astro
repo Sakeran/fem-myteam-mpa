@@ -1,0 +1,36 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import TextInput from "../../../components/Contact/ContactForm/TextInput.svelte";
+import TextArea from "../../../components/Contact/ContactForm/TextArea.svelte";
+---
+
+<Layout noHeader={true}>
+    <div class="max-w-md-container flex flex-col gap-8">
+        <h2>Text</h2>
+        <TextInput
+            client:load
+            label="Title"
+            placeholder={"Title"}
+            name="title"
+            required={true}
+        />
+
+        <h2>Email</h2>
+        <TextInput
+            client:load
+            type={"email"}
+            label="Email Address"
+            placeholder={"Email Address"}
+            name="title"
+            required={true}
+        />
+        <h2>TextArea</h2>
+        <TextArea
+            client:load
+            label="Message"
+            placeholder={"Message"}
+            name="message"
+            required={true}
+        />
+    </div>
+</Layout>

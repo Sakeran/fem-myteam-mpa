@@ -80,6 +80,7 @@ module.exports = {
   plugins: [
     plugin(({ addVariant }) => {
       addVariant("hocus", ["&:hover", "&:focus-visible"]);
+      addVariant("aria-invalid", ['&[aria-invalid="true"]']);
     }),
   ],
 };

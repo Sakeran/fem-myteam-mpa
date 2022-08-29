@@ -11,10 +11,14 @@
 
   export let data: TeammateBioData;
   export let expanded: boolean;
+
+  let ready = false;
+  onMount(() => ready = true);
 </script>
 
 <button
   on:click
+  disabled={!ready}
   aria-expanded={expanded}
   class:bg-blue-rapture={expanded}
   class="mx-auto w-14 aspect-square rounded-[50%] bg-red-coral hocus:bg-blue-rapture motion-safe:transition-colors motion-safe:ease-in-out grid place-items-center"

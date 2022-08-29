@@ -24,7 +24,7 @@ const { name, jobTitle, quote, avatarURL } = Astro.props as Props;
         {quote}
     </blockquote>
 
-    <figcaption class="flex flex-col items-center mt-4">
+    <figcaption class="flex flex-col items-center mt-4 lg:mt-6">
         <span
             class="font-bold text-18 leading-28/18 text-blue-rapture text-center"
             >{name}
@@ -35,7 +35,7 @@ const { name, jobTitle, quote, avatarURL } = Astro.props as Props;
         </span>
         <img
             loading="lazy"
-            class="w-[3.875rem] mt-4 aspect-square border-blue-rapture border-2 rounded-[50%]"
+            class="w-[3.875rem] mt-4 lg:mt-8 aspect-square border-blue-rapture border-2 rounded-[50%]"
             src={avatarURL}
             alt=""
         />

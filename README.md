@@ -1,45 +1,17 @@
-# Astro Starter Kit: Minimal
+# fem-myteam-mpa
 
-```
-npm init astro -- --template minimal
-```
+This is a solution to the [myteam website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/myteam-multipage-website-mxlEauvW). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
+## Notes
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+(Finished Augest 29th, 2022)
 
-## 🚀 Project Structure
+I didn’t really do anything new with this project. So far as layout and overall design go, this is functionally the same website as the [PayAPI](https://www.frontendmentor.io/solutions/payapi-static-site-with-astro-tailwindcss-RG-irKjRSM) challenge I worked on previously, albeit with more straightforward CSS and illustrations. This meant I was able to use the same tech stack as last time, but without the overhead of all the troubleshooting. Together with some other optimizations to my workflow, I ended up saving 2-3 days of development time over PayAPI, which isn't nothing.
 
-Inside of your Astro project, you'll see the following folders and files:
+The only component that really gave me pause this time around was the "Team Member info" widget that can be seen on the About page, which presented an interesting a11y problem to solve. Each of these "cards" has a front- and back-face, which can be toggled between using a button underneath it. However, the visual "flipping" effect is meaningless to a screen reader, which relies on the DOM structure. If the component was going to make any sense to an AT-user, then I needed to make sure the back face followed the toggle button in the DOM, regardless of what it looked like visual:ly.
 
-```
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+After half an evening of agonizing, I settled on implementing the back face as a kind of custom [\<details\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) component. I'm still not 100% happy with this solution (the tabbing experience is kind of "zig-zaggy" and not ideal), but it's the best I could come up with given my current knowledge.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Everything else beyond that was fairly painless. I made some improvements to my TailwindCSS usage (custom modifiers can cut down on a lot of repetition), and made use of Svelte for most of the interactive components, at least when I remembered that was an option. I also started the project thinking that I might animate some of the decorative SVGs, particularly on the home page, but ultimately ended up dropping this as I found the extra motion didn't add much appeal to the design.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+[A live version of this project can be found here.]()

@@ -14,4 +14,4 @@ After half an evening of agonizing, I settled on implementing the back face as a
 
 Everything else beyond that was fairly painless. I made some improvements to my TailwindCSS usage (custom modifiers can cut down on a lot of repetition), and made use of Svelte for most of the interactive components, at least when I remembered that was an option. I also started the project thinking that I might animate some of the decorative SVGs, particularly on the home page, but ultimately ended up dropping this as I found the extra motion didn't add much appeal to the design.
 
-[A live version of this project can be found here.]()
+[A live version of this project can be found here.](https://amorse-fem-myteam.netlify.app/)
